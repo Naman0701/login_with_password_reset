@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(40$u9n4ip8$r!pasl!y_d_i4aknc7@pk$w@vpzaz-3*_$x13b'
 ALLOWED_HOSTS = ['login-with-password-reset.herokuapp.com','localhost','127.0.0.1']
 
-DEBUG=True
+DEBUG=False
 
 CSRF_TRUSTED_ORIGINS = ['https://*login-with-password-reset.herokuapp.com/','https://*.127.0.0.1']
 
@@ -102,6 +102,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT=587
-EMAIL_HOST_USER='sureshnice33@gmail.com'
+EMAIL_HOST_USER='supokamino@gmail.com'
 EMAIL_HOST_PASSWORD='efkqullnzsemqzvc'
 EMAIL_USE_TLS=True
