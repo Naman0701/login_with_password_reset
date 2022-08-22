@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{%static '/style/login.css' %}">
+</head>
+<body>
+ <div id="outline" class="flex">
+        <div class="main_box flex">
+            <div class="box flex">
+                {% if messages %}
+            <div class="flex" id="mess">
+            {% for message in messages %}
+                <img src="/static/img/warn.png" style="height: 20px; margin-right: 5px">
+                <strong>{{ message }}</strong>
+                <button id="x" onclick="hide_it()">X</button>
+            {% endfor %}
+            </div>
+            {% endif %}
+
+            <form name="forgot_p" id="log_in" class="items" action="/{{ email }}/change_password/" method="post"> {% csrf_token %}
+            <input type="number" placeholder="OTP" class="user" name="otp" minlength="6" maxlength="6" autofocus required>
+            <input type="password" id="pwd1" placeholder="Password" class="user" name="pwd" minlength="7" maxlength="20" required>
+            <input type="password" id="pwd2" placeholder="Confirm Password" class="user" name="cpwd" onchange="check_pass()" minlength="7" maxlength="20" required>
+            <input type="hidden" name="action" value="cnf_p">
+
+            <div class="formality flex">
+                <a href="/forgot/" class="forg">Re-enter Email</a>
+
+
+        </div>
+        <div class="flex btn_div">
+            <button type="submit" id='submit' class="btn" disabled>Save Password</button>
+            </div>
+        </form>
+
+        </div>
+        </div>
+ </div>
+
+<script>
+        var p1=document.getElementById('pwd1'),
+        p2=document.getElementById('pwd2');
+
+    function check_pass() {
+        console.log(p1)
+        console.log(p2)
+        if (p1.value==p2.value)
+            {document.getElementById('submit').disabled=false;}
+        else{
+            document.getElementById('submit').disabled=true
+        }
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{%static '/style/login.css' %}">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <div id="outline" class="flex">
+        <div class="main_box flex">
+            {% if messages %}
+            <div class="flex" id="mess">
+            {% for message in messages %}
+                <img src="/static/img/warn.png" style="height: 20px; margin-right: 5px">
+                <strong>{{ message }}</strong>
+                <button id="x" onclick="hide_it()">X</button>
+            {% endfor %}
+            </div>
+            {% endif %}
+
+        <div class="box flex">
+            <form name="log_in" id="log_in" class="items" action="/home/" method="post"> {% csrf_token %}
+            <input type="text" placeholder="Email ID" class="user" name="email" autofocus required>
+            <input type="password" placeholder="Password" class="user" name="pwd" onchange="check_pass()" minlength="7" maxlength="20" required>
+            <input type="hidden" name="action" value="log_in">
+
+            <div class="formality flex">
+                <a href="#" class="forg toggl">Register Here</a>
+                <a href="/forgot" class="forg">Forgot Password ?</a>
+
+
+        </div>
+        <div class="flex btn_div">
+            <button type="submit" class="btn">LOGIN</button>
+            <button type="reset" class="btn">CLEAR</button>
+            </div>
+        </form>
+
+        </div>
+
+        <div class="reg_box">
+          <form name="register" id="register" class="reg_items" action="/" method="post"> {% csrf_token %}
+            <input type="text" placeholder="Name" class="user" name="name" autofocus required>
+            <input type="date" placeholder="Date Of Birth" class="user" name="dob" required>
+            <input type="email" placeholder="EMAIL" class="user" name="email" required>
+            <input type="number" placeholder="Phone Number" class="user" name="pno" required>
+            <input type="text" placeholder="Street-City-State-Country" class="user" name="location" required>
+            <input type="number" placeholder="PIN CODE" class="user" name="pin" required>
+            <input type="password" id="pwd1" placeholder="Password" class="user" name="pwd" onchange="check_pass()" minlength="7" maxlength="20" required>
+            <input type="password" id="pwd2" placeholder="Confirm Password" class="user" name="cpwd" onchange="check_pass()" minlength="7" maxlength="20" required>
+            <input type="hidden" name="action" value="register">
+
+            <div class="formality flex">
+            <a href="#" class="forg toggl">Have an account? Login Here</a>
+            </div>
+
+            <button id="submit" type="submit" class="btn" disabled>REGISTER</button>
+            <button type="reset" class="btn">CLEAR</button>
+        </form>
+    </div>
+    </div>
+        </div>
+
+<script>
+
+       function hide_it()
+    {
+        var div=document.getElementById('mess');
+        div.style.display='none';
+    }
+
+    var p1=document.getElementById('pwd1'),
+        p2=document.getElementById('pwd2');
+
+
+    $('.toggl').click(
+  function() {
+    $('.box').animate({height: "toggle", opacity: "toggle"}, "slow");
+    $('.reg_box').animate({height: "toggle", opacity: "toggle"}, "slow");
+    document.getElementById('log_in').reset();
+    document.getElementById('register').reset();
+    hide_it();
+  }
+ );
+
+    function check_pass() {
+        console.log(p1)
+        console.log(p2)
+        if (p1.value==p2.value)
+            {document.getElementById('submit').disabled=false;}
+        else{
+            document.getElementById('submit').disabled=true
+        }
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{%static '/style/login.css' %}">
+</head>
+<body>
+ <div id="outline" class="flex">
+        <div class="main_box flex">
+            <div class="box f_box flex">
+            <form name="forgot_p" id="log_in" class="items" action="/otp/" method="post"> {% csrf_token %}
+            <input type="email" placeholder="Email ID" class="user" name="email" autofocus required>
+            <input type="hidden" name="action" value="forgot_p">
+
+            <div class="formality flex">
+                <a href="/" class="forg">Remember Password? Log IN Here</a>
+
+
+        </div>
+        <div class="flex btn_div">
+            <button type="submit" class="btn">Send OTP</button>
+            </div>
+        </form>
+
+        </div>
+        </div>
+ </div>
+
+</body>
+
+</html>
