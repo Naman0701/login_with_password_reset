@@ -5,11 +5,11 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-(40$u9n4ip8$r!pasl!y_d_i4aknc7@pk$w@vpzaz-3*_$x13b'
-ALLOWED_HOSTS = ['','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['login-with-password-reset.herokuapp.com','localhost','127.0.0.1']
 
-DEBUG=False
+DEBUG=True
 
-CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://*login-with-password-reset.herokuapp.com/','https://*.127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
