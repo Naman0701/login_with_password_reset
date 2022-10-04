@@ -1,0 +1,79 @@
+CREATE TABLE `transaction_details` (
+  `sno` int(5) NOT NULL,
+  `sender` varchar(100) NOT NULL,
+  `receiver` varchar(100) NOT NULL,
+  `balance` int(10) NOT NULL,
+  `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transaction_details`
+--
+
+INSERT INTO `transaction_details` (`sno`, `sender`, `receiver`, `balance`, `datetime`) VALUES
+(1, 'Vedant', 'Ramu', 300000, '2022-09-10 11:23:05'),
+(2, 'Ramu', 'Kshitij', 5500, '2022-09-10 13:57:56'),
+(3, 'Vedant', 'Aman', 20000, '2022-09-10 14:01:56'),
+(4, 'Manas', 'NA', 30000, '2022-09-10 15:56:49'),
+(5, 'Khushi', 'Nikky', 40000, '2022-09-10 15:57:21'),
+(7, 'Pk', 'Vedant', 2900, '2021-03-10 16:02:53'),
+(10, 'Nikky', 'Abhinav', 10000, '2022-09-20 23:18:33'),
+(11, 'Vedant', 'Amisha', 100000, '2022-09-20 23:37:23'),
+(12, 'Sherin', 'Shiba', 10000, '2022-09-20 23:44:54'),
+(13, 'Pk', 'Manas', 1000, '2022-09-21 00:11:30'),
+(14, 'Vedant', 'Manas', 1000, '2022-09-21 00:11:44'),
+(15, 'NA', 'Manas', 1000, '2022-09-21 00:11:56'),
+(16, 'Aman', 'Manas', 10000, '2022-09-21 00:14:21');
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_details`
+--
+
+CREATE TABLE `users_details` (
+  `id` int(5) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `balance` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users_details`
+--
+
+INSERT INTO `users_details` (`id`, `name`, `email`, `balance`) VALUES
+(1, 'Vedant', 'vedu@gmail.com', 63000),
+(2, 'Pk', 'pk@gmail.com', 89980),
+(3, 'NA', 'na@gmail.com', 52446),
+(4, 'Raamu', 'raamu@gmail.com', 78000),
+(5, 'Aman', 'aman@gmail.com', 24000),
+(6, 'Ayush', 'ayush@gmail.com', 60000),
+(7, 'Amisha', 'amisha@gmail.com', 69024),
+(8, 'Nikky', 'nikky@gmail.com', 30000),
+(9, 'Puneet', 'puneet@gmail.com', 83000),
+(10, 'Abhinav', 'abhi@gmail.com', 79550);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `transaction_details`
+--
+ALTER TABLE `transaction_details`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `transaction_details`
+--
+ALTER TABLE `transaction_details`
+  MODIFY `sno` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
