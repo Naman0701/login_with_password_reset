@@ -2,7 +2,7 @@ CREATE TABLE `transaction_details` (
   `sno` int(5) NOT NULL,
   `sender` varchar(100) NOT NULL,
   `receiver` varchar(100) NOT NULL,
-  `balance` int(10) NOT NULL,
+  `balance` int(10) ,
   `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
