@@ -47,7 +47,7 @@ INSERT INTO `users_details` (`id`, `name`, `email`, `balance`) VALUES
 (1, 'Vedant', 'vedu@gmail.com', 63000),
 (2, 'Pk', 'pk@gmail.com', 89980),
 (3, 'NA', 'na@gmail.com', 52446),
-(4, 'Raamu', 'raamu@gmail.com', 78000),
+(4, 'Pranjal', 'pranjal@gmail.com', 78000),
 (5, 'Aman', 'aman@gmail.com', 24000),
 (6, 'Ayush', 'ayush@gmail.com', 60000),
 (7, 'Amisha', 'amisha@gmail.com', 69024),
